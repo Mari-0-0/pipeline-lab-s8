@@ -1,0 +1,32 @@
+y-cm"># .github/workflows/ci.yml
+y-cm"># Aluno: Mariana dos Santos Valentin Barboza
+y-cm"># Semana 8 — Pipeline de CI | Prof. Caetano Santos | FIEC
+
+y-key">namey-sym">: CI — Pipeline de Testes
+
+y-key">ony-sym">:
+  y-key">pushy-sym">:
+    y-key">branchesy-sym">: [ "**" ]
+  y-key">pull_requesty-sym">:
+    y-key">branchesy-sym">: [ "**" ]
+
+y-key">jobsy-sym">:
+  y-key">build-and-testy-sym">:
+    y-key">runs-ony-sym">: ubuntu-latest
+
+    y-key">stepsy-sym">:
+      - name: 📥 Checkout do repositório
+        y-key">usesy-sym">: actions/checkout@v4
+
+      - name: 🐍 Configurar Python 3.11
+        y-key">usesy-sym">: actions/setup-python@v5
+        y-key">withy-sym">:
+          y-key">python-versiony-sym">: "3.11"
+
+      - name: 📦 Instalar dependências
+        y-key">runy-sym">: |
+          python -m pip install --upgrade pip
+          pip install pytest
+
+      - name: 🧪 Executar testes
+        y-key">runy-sym">: pytest tests/ -v
