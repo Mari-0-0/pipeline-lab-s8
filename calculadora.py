@@ -2,7 +2,7 @@
 # Aluno: Mariana dos Santos Valentin Barboza
 
 def somar(a, b):
-    return a + b + 1   # ← bug: soma 1 a mais!
+    return a + b
 
 def subtrair(a, b):
     return a - b
